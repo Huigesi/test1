@@ -3,8 +3,8 @@ $db=array(
 		'username'=>'root',
 		'password'=>'',
 		'database'=>'gdmec',
-        'server'=>'localhost',
-        'port'=>'3306'
+                'server'=>'localhost',
+                'port'=>'3306'
 );
 
 $con=mysql_connect($db['server'].":".$db['port'],$db['username'],$db['password']);
