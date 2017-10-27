@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body onclick="test2()">
+<div onclick="test3()">
+    <input value="test1" type="button" id="input1" onclick="test1()">
+    <input value="test2" type="button" id="input2" onclick="test2()">
+    <input value="test3" type="button" id="input3">
+</div>
+<script type="text/javascript">
+	function test1(){
+        alert("test1");
+        var e=event||window.event;
+        if(e.stopPropagation){
+        	e.stopPropagation();
+        }else{
+        	e.cancelBuddle=true;
+        }
+	}
+	function test2(){
+        alert("test2");
+	}
+	function test3(){
+        alert("test3");
+	}
+	/*input1.onclick=test1;
+	input1.attachEvent("onclick",test1);//只支持ie浏览器
+	input2.detachEvent("onclick",test2);
+	input3.addEventListener("click",test3,false);*///只支持谷歌浏览器
+	i1=document.getElementById("input1");
+	i2=document.getElementById("input2");
+	i3=document.getElementById("input3");
+	
+	if(i3.addEventListener){
+		i3.addEventListener("click",test3,false);
+	}else if(i3.attachEvent){
+		i3.attachEvent("onclick",test3);
+	}
+
+</script>
+</body>
+</html>
