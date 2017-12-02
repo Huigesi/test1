@@ -3,10 +3,11 @@
 	include("init.inc.php");
 	$sql = "select * from tb_stuinf";
 	$r = mysql_query($sql);
-	$stu = array();
+	
 	while($row = mysql_fetch_array($r)){
-		$stu[] = $row;
+		$array[]=$row;
 	}
+	$stu = $array;
 	$smarty->assign("stu",$stu);
 	$smarty->display("sy20.tpl");
 	
